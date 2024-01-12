@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPLIsBackground", "TPLIsBac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPLAsyncState", "TPLAsyncState\TPLAsyncState.csproj", "{62EFD51F-10A9-483C-BA41-27DFC56CB09E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPLWait", "TPLWait\TPLWait.csproj", "{4D5E5671-FE1B-4A08-B82F-BA7AE77571DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{62EFD51F-10A9-483C-BA41-27DFC56CB09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62EFD51F-10A9-483C-BA41-27DFC56CB09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62EFD51F-10A9-483C-BA41-27DFC56CB09E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D5E5671-FE1B-4A08-B82F-BA7AE77571DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D5E5671-FE1B-4A08-B82F-BA7AE77571DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D5E5671-FE1B-4A08-B82F-BA7AE77571DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D5E5671-FE1B-4A08-B82F-BA7AE77571DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
