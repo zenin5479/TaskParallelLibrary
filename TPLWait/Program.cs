@@ -31,8 +31,8 @@ namespace TPLWait
             //while (!task.IsCompleted)
             //    Thread.Sleep(100);
             // Вариант 3: 
-            //IAsyncResult asynkResult = task as IAsyncResult;
-            //ManualResetEvent waitHandle = asynkResult.AsyncWaitHandle as ManualResetEvent;
+            //IAsyncResult asynkResult = task;
+            //ManualResetEvent waitHandle = (ManualResetEvent)asynkResult.AsyncWaitHandle;
             //waitHandle.WaitOne();
 
             Console.WriteLine("\ntask.IsCompleted = " + task.IsCompleted);
