@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 
 // Сравнение последовательного и параллельного выполнения цикла for.
-// Пример выполнять через (CTRL+F5).
 
 namespace TPLParallelComparisonFor
 {
