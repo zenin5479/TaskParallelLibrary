@@ -44,25 +44,28 @@ namespace TPLTaskScheduler
 
     class DelayTaskScheduler : TaskScheduler
     {
-        Queue<Task> queue = new Queue<Task>();
-        protected override void QueueTask(Task task) // Вызывается 1-ым.
+        private readonly Queue<Task> _queue = new Queue<Task>();
+        // Вызывается 1-ым.
+        protected override void QueueTask(Task task) 
         {
             Console.WriteLine("QueueTask");
-            queue.Enqueue(task);
-            WaitCallback callback = (object state) => base.TryExecuteTask(queue.Dequeue());
-            ThreadPool.QueueUserWorkItem(callback, null);  // Асинхронный вызов задач.
+            _queue.Enqueue(task);
+            WaitCallback callback = state => TryExecuteTask(_queue.Dequeue());
+            // Асинхронный вызов задач.
+            ThreadPool.QueueUserWorkItem(callback, null);  
         }
 
-        protected override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued) // Вызывается 2-ым.
+        // Вызывается 2-ым.
+        protected override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued) 
         {
             Console.WriteLine("TryExecuteTaskInline");
-            //base.TryExecuteTask(queue.Dequeue());
+            //base.TryExecuteTask(_queue.Dequeue());
             return false; // return true; - Будет исключение.
         }
 
         protected override IEnumerable<Task> GetScheduledTasks()
         {
-            return queue;
+            return _queue;
         }
     }
 }
