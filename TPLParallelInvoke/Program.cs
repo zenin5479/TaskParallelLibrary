@@ -16,7 +16,7 @@ namespace TPLParallelInvoke
                 Thread.Sleep(10);
                 Console.Write("+");
             }
-            Console.WriteLine("MyTask1: завершен.");
+            Console.WriteLine("\nMyTask1: завершен.");
         }
 
         static void MyTask2()
@@ -27,7 +27,7 @@ namespace TPLParallelInvoke
                 Thread.Sleep(10);
                 Console.Write("-");
             }
-            Console.WriteLine("MyTask2: завершен.");
+            Console.WriteLine("\nMyTask2: завершен.");
         }
 
         static void Main()
@@ -35,17 +35,19 @@ namespace TPLParallelInvoke
             Console.WriteLine("Основной поток запущен.");
             ParallelOptions options = new ParallelOptions();
             // Выделить определенное количество процессорных ядер.
-            //options.MaxDegreeOfParallelism = Environment.ProcessorCount > 2
-            //                          ? Environment.ProcessorCount - 1 : 1;
-            // Попробовать 1 и 2
-            options.MaxDegreeOfParallelism = 2;
+            //options.MaxDegreeOfParallelism = Environment.ProcessorCount > 2 ? Environment.ProcessorCount - 1 : 1;
+            
+            // ParallelOptions.MaxDegreeOfParallelism
+            // Получает или задает максимальное число параллельных задач, допускаемое этим экземпляром
+            // Выполнить параллельно 1 задачу. (или 2)
+            options.MaxDegreeOfParallelism = 1;
             Console.WriteLine("Количество логических ядер CPU:" + Environment.ProcessorCount);
             Console.ReadKey();
 
             // Выполнить параллельно два метода.
-            Parallel.Invoke(options, MyTask1, MyTask2);
+            //Parallel.Invoke(options, MyTask1, MyTask2);
             // Выполнить параллельно четыре метода.
-            //Parallel.Invoke(options, MyTask1, MyTask2, MyTask1, MyTask2);
+            Parallel.Invoke(options, MyTask1, MyTask2, MyTask1, MyTask2);
 
             // ВНИМАНИЕ!
             // Выполнение метода Main() приостанавливается, 
