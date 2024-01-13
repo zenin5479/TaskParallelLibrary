@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "015_TPL_DelayTaskScheduler"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "016_TPL_TaskScheduler", "TPLTaskScheduler\016_TPL_TaskScheduler.csproj", "{11576903-4D34-489B-AE23-96E7F3769B5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "016_TPL_TaskScheduler", "TPLTaskScheduler\016_TPL_TaskScheduler.csproj", "{11576903-4D34-489B-AE23-96E7F3769B5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "017_TPL_ParallelInvoke", "TPLParallelInvoke\017_TPL_ParallelInvoke.csproj", "{3043B10A-7491-406D-912F-4808DCD094E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "018_TPL_ParallelFor", "TPLParallelFor\018_TPL_ParallelFor.csproj", "{56176238-939E-4691-9EDB-31DF0989A13A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{3043B10A-7491-406D-912F-4808DCD094E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3043B10A-7491-406D-912F-4808DCD094E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3043B10A-7491-406D-912F-4808DCD094E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56176238-939E-4691-9EDB-31DF0989A13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56176238-939E-4691-9EDB-31DF0989A13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56176238-939E-4691-9EDB-31DF0989A13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56176238-939E-4691-9EDB-31DF0989A13A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
