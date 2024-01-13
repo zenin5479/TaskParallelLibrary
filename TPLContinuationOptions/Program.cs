@@ -27,7 +27,7 @@ namespace TPLContinuationOptions
             task.ContinueWith(continuation, TaskContinuationOptions.OnlyOnFaulted);
             task.Start();
 
-            // Delay
+            // Задержка
             Console.ReadKey();
         }
     }

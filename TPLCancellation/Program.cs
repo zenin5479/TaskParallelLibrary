@@ -11,7 +11,6 @@ namespace TPLCancellation
         static void MyTask(object arg)
         {
             CancellationToken token = (CancellationToken)arg;
-
             // Если задача сразу после старта отменена - возбудить OperationCanceledException.
             token.ThrowIfCancellationRequested();
             Console.WriteLine("MyTask запущен.");
@@ -37,7 +36,6 @@ namespace TPLCancellation
             Task task = new Task(MyTask, token);
             task.Start();
             Thread.Sleep(2000);
-
             try
             {
                 cancellation.Cancel(); // Отмена выполняемой задачи.
@@ -47,9 +45,11 @@ namespace TPLCancellation
             {
                 if (task.IsCanceled)
                     Console.WriteLine("\nЗадача отменена.\n");
-
-                Console.WriteLine("Inner Exception : " + e.InnerException.GetType());
-                Console.WriteLine("Message         : " + e.InnerException.Message);
+                if (e.InnerException != null)
+                {
+                    Console.WriteLine("Inner Exception : " + e.InnerException.GetType());
+                    Console.WriteLine("Message         : " + e.InnerException.Message);
+                }
                 Console.WriteLine("Статус задачи   : " + task.Status);
             }
             Console.WriteLine("Основной поток завершен.");
