@@ -37,9 +37,9 @@ namespace TPLParallelComparisonFor
             for (int i = 0; i < data.Length; i++)
                 data[i] = i * i * i / 123;
             timer.Stop();
-            Console.WriteLine("Последовательное преобразование: {0} секунд.", timer.Elapsed.TotalSeconds);
+            Console.WriteLine("Последовательное преобразование: {0} секунд.\n", timer.Elapsed.TotalSeconds);
             timer.Reset();
-            Console.WriteLine("\nОсновной поток завершен.");
+            Console.WriteLine("Основной поток завершен.");
 
             // Задержка
             Console.ReadKey();
