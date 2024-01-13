@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Threading;
+using System.Threading.Tasks;
 
 // Планировщик задач
 
@@ -46,17 +46,17 @@ namespace TPLTaskScheduler
     {
         private readonly Queue<Task> _queue = new Queue<Task>();
         // Вызывается 1-ым.
-        protected override void QueueTask(Task task) 
+        protected override void QueueTask(Task task)
         {
             Console.WriteLine("QueueTask");
             _queue.Enqueue(task);
             WaitCallback callback = state => TryExecuteTask(_queue.Dequeue());
             // Асинхронный вызов задач.
-            ThreadPool.QueueUserWorkItem(callback, null);  
+            ThreadPool.QueueUserWorkItem(callback, null);
         }
 
         // Вызывается 2-ым.
-        protected override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued) 
+        protected override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued)
         {
             Console.WriteLine("TryExecuteTaskInline");
             //base.TryExecuteTask(_queue.Dequeue());

@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Threading.Tasks;
 using System.Threading;
+using System.Threading.Tasks;
 
 // Применение метода Parallel.Invoke() для параллельного выполнения двух методов.
 
@@ -36,7 +36,7 @@ namespace TPLParallelInvoke
             ParallelOptions options = new ParallelOptions();
             // Выделить определенное количество процессорных ядер.
             //options.MaxDegreeOfParallelism = Environment.ProcessorCount > 2 ? Environment.ProcessorCount - 1 : 1;
-            
+
             // ParallelOptions.MaxDegreeOfParallelism
             // Получает или задает максимальное число параллельных задач, допускаемое этим экземпляром
             // Выполнить параллельно 1 задачу. (или 2)
@@ -49,9 +49,8 @@ namespace TPLParallelInvoke
             // Выполнить параллельно четыре метода.
             Parallel.Invoke(options, MyTask1, MyTask2, MyTask1, MyTask2);
 
-            // ВНИМАНИЕ!
-            // Выполнение метода Main() приостанавливается, 
-            // пока не произойдет завершение задач.
+            // Внимание!!!
+            // Выполнение метода Main() приостанавливается, пока не произойдет завершение задач.
             Console.WriteLine("Основной поток завершен.");
 
             // Задержка
