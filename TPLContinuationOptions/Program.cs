@@ -10,7 +10,8 @@ namespace TPLContinuationOptions
         static int MyTask()
         {
             byte result = 255;
-            checked // Убрать комментарий.
+            // Убрать комментарий.
+            checked
             {
                 result += 1;
             }
@@ -23,7 +24,12 @@ namespace TPLContinuationOptions
             Action<Task<int>> continuation;
             continuation = t => Console.WriteLine("Result : " + task.Result);
             task.ContinueWith(continuation, TaskContinuationOptions.OnlyOnRanToCompletion);
-            continuation = t => Console.WriteLine("Inner Exception : " + task.Exception.InnerException.Message);
+            continuation = t =>
+            {
+                if (task.Exception != null)
+                    if (task.Exception.InnerException != null)
+                        Console.WriteLine("Inner Exception : " + task.Exception.InnerException.Message);
+            };
             task.ContinueWith(continuation, TaskContinuationOptions.OnlyOnFaulted);
             task.Start();
 

@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Collections.Generic;
 
+// Планировщик задач
+
 namespace TPLDelayTaskScheduler
 {
     internal class Program
@@ -37,22 +39,22 @@ namespace TPLDelayTaskScheduler
 
     class DelayTaskScheduler : TaskScheduler
     {
-        Queue<Task> queue = new Queue<Task>();
-        AutoResetEvent auto = new AutoResetEvent(false);
+        private readonly Queue<Task> _queue = new Queue<Task>();
+        private readonly AutoResetEvent _auto = new AutoResetEvent(false);
         protected override void QueueTask(Task task) // Вызывается автоматически фабрикой задач.
         {
             Console.WriteLine("QueueTask ThreadID {0}", Thread.CurrentThread.ManagedThreadId);
-            queue.Enqueue(task);
-            WaitOrTimerCallback callback = (object state, bool timedOut) => base.TryExecuteTask(queue.Dequeue());
+            _queue.Enqueue(task);
+            WaitOrTimerCallback callback = (state, timedOut) => TryExecuteTask(_queue.Dequeue());
             // Асинхронный вызов задачи с задержкой в 2 секунды.
             #region Аргументы
-            /*     1. auto - от кого ждать сингнал.
+            /*     1. _auto - от кого ждать сингнал.
                    2. callback - что выполнять.
                    3. null - 1-й аргумент Callback метода.
                    4. 2000 - интервал между вызовами Callback метода.
                    5. true - вызвать Callback метод один раз. false - вызывать Callback метод с интервалом.  */
             #endregion
-            ThreadPool.RegisterWaitForSingleObject(auto, callback, null, 2000, true);
+            ThreadPool.RegisterWaitForSingleObject(_auto, callback, null, 2000, true);
         }
 
         protected override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued)
@@ -62,7 +64,7 @@ namespace TPLDelayTaskScheduler
 
         protected override IEnumerable<Task> GetScheduledTasks()
         {
-            return queue;
+            return _queue;
         }
     }
 }
