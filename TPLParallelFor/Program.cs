@@ -19,22 +19,19 @@ namespace TPLParallelFor
                 data[i] = i * i * i / 123;
             }
             timer.Stop();
-            Console.WriteLine("Обычный цикл for: " + timer.ElapsedMilliseconds);
+            Console.WriteLine("Обычный цикл for: " + timer.Elapsed.TotalMilliseconds);
             timer.Reset();
             Action<int> transform = i => { data[i] = i * i * i / 123; };
             timer.Start();
             // Инициализация данных в параллельном цикле for.
             Parallel.For(0, data.Length, transform);
             timer.Stop();
-            Console.WriteLine("Параллельный цикл for: " + timer.ElapsedMilliseconds);
+            Console.WriteLine("Параллельный цикл for: " + timer.Elapsed.TotalMilliseconds);
 
             // Внимание!!!
             // Выполнение метода Main() приостанавливается, пока не произойдет завершение работы метода For().
 
             Console.WriteLine("Основной поток завершен.");
-            
-            // Задержка
-            Console.ReadKey();
         }
     }
 }
