@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "017_TPL_ParallelInvoke", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "018_TPL_ParallelFor", "TPLParallelFor\018_TPL_ParallelFor.csproj", "{56176238-939E-4691-9EDB-31DF0989A13A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "019_TPL_ParallelComparisonFor", "TPLParallelComparisonFor\019_TPL_ParallelComparisonFor.csproj", "{53B1786E-3CCE-47C6-8C2A-7C246A20D2CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{56176238-939E-4691-9EDB-31DF0989A13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56176238-939E-4691-9EDB-31DF0989A13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56176238-939E-4691-9EDB-31DF0989A13A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B1786E-3CCE-47C6-8C2A-7C246A20D2CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B1786E-3CCE-47C6-8C2A-7C246A20D2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B1786E-3CCE-47C6-8C2A-7C246A20D2CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B1786E-3CCE-47C6-8C2A-7C246A20D2CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
