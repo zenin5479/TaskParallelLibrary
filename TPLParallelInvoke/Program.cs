@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using System.Threading;
 
+// Применение метода Parallel.Invoke() для параллельного выполнения двух методов.
+
 namespace TPLParallelInvoke
 {
     internal static class Program
