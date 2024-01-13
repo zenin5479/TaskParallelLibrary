@@ -26,8 +26,8 @@ namespace PLINQWithCancellation
             ParallelQuery<int> negatives = from element in array
                     .AsParallel()
                     .WithCancellation(cancellation.Token)
-                where element < 0
-                select element;
+                                           where element < 0
+                                           select element;
 
             // Отмена выполнения запроса PLINQ по истечении 10 миллисекунд.
             cancellation.CancelAfter(10);

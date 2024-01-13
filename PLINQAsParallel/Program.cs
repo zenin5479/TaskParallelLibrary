@@ -23,8 +23,8 @@ namespace PLINQAsParallel
             // Запрос PLINQ для поиска отрицательных значений.
             ParallelQuery<int> negatives = from element in array
                     .AsParallel()
-                where element < 0
-                select element;
+                                           where element < 0
+                                           select element;
 
             foreach (int element in negatives)
                 Console.Write(element + " ");
