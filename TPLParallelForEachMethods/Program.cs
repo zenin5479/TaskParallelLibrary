@@ -25,10 +25,10 @@ namespace TPLParallelForEachMethods
         {
             IList<Element> elements = new List<Element>();
             Action<int> initialize = (i) => elements.Add(new Element() { A = i });
-            // Инициализация коллекции в 10 000 элементов.
-            Parallel.For(0, 1000, initialize);
+            // Инициализация коллекции в 100 элементов.
+            Parallel.For(0, 100, initialize);
             // Помещение отрицательного значения в коллекцию.
-            elements[300].A = -1;
+            elements[50].A = -1;
             Action<Element, ParallelLoopState> transform = (element, state) =>
             {
                 // ЕСЛИ: Отрицательное значение
@@ -43,7 +43,7 @@ namespace TPLParallelForEachMethods
             ParallelLoopResult loopResult = Parallel.ForEach(elements, transform);
             if (!loopResult.IsCompleted)
             {
-                Console.WriteLine("\nОбход коллекции завершился преждевременно." + " Элемент {0} имеет отрицательное значение.\n",
+                Console.WriteLine("Обход коллекции завершился преждевременно." + " Элемент {0} имеет отрицательное значение.\n",
                     loopResult.LowestBreakIteration);
             }
             Console.WriteLine("Основной поток завершен.");

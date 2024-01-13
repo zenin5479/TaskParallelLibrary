@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "021_TPL_ParallelForEach", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "022_TPL_ParallelForEachMethods", "TPLParallelForEachMethods\022_TPL_ParallelForEachMethods.csproj", "{E6B880EA-A15D-44C6-B9CA-2A027ED9E80F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "023_TPL_PLINQAsParallel", "PLINQAsParallel\023_TPL_PLINQAsParallel.csproj", "{5AEDC0EE-F732-40CD-9D69-368D74441265}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{E6B880EA-A15D-44C6-B9CA-2A027ED9E80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6B880EA-A15D-44C6-B9CA-2A027ED9E80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6B880EA-A15D-44C6-B9CA-2A027ED9E80F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AEDC0EE-F732-40CD-9D69-368D74441265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AEDC0EE-F732-40CD-9D69-368D74441265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AEDC0EE-F732-40CD-9D69-368D74441265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AEDC0EE-F732-40CD-9D69-368D74441265}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
