@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "015_TPL_DelayTaskScheduler"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "016_TPL_TaskScheduler", "TPLTaskScheduler\016_TPL_TaskScheduler.csproj", "{11576903-4D34-489B-AE23-96E7F3769B5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "017_TPL_Parallel.Invoke", "TPLParallelInvoke\017_TPL_Parallel.Invoke.csproj", "{3043B10A-7491-406D-912F-4808DCD094E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "016_TPL_TaskScheduler", "TPLTaskScheduler\016_TPL_TaskScheduler.csproj", "{11576903-4D34-489B-AE23-96E7F3769B5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
