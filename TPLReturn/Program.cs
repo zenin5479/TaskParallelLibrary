@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using System.Threading;
 
+// Возвращение значения из задачи.
+
 namespace TPLReturn
 {
     struct Context

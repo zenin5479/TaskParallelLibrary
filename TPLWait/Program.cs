@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-
 // Для использования AsyncResult
+//using System.Runtime.Remoting;
 
 namespace TPLWait
 {

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 
+// Возбуждение исключений в задачах.
+
 namespace TPLException
 {
     internal class Program

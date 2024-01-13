@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using System.Threading;
 
+// Продолжение - автоматический запуск новой задачи, после завершения первой задачи.
+
 namespace TPLContinuation
 {
     internal class Program

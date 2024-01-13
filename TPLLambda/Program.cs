@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using System.Threading;
 
+// Использование лямбда-выражения в качестве задачи.
+
 namespace TPLLambda
 {
     class Program
