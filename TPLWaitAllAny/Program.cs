@@ -7,41 +7,41 @@ using System.Threading.Tasks;
 
 namespace TPLWaitAllAny
 {
-    class Program
-    {
-        static void MyTask1()
-        {
-            Console.WriteLine("MyTask: CurrentId " + Task.CurrentId + " запущен.");
-            Thread.Sleep(1000);
-            Console.WriteLine("MyTask: CurrentId " + Task.CurrentId + " завершен.");
-        }
-        static void MyTask2()
-        {
-            Console.WriteLine("MyTask: CurrentId " + Task.CurrentId + " запущен.");
-            Thread.Sleep(1000);
-            Console.WriteLine("MyTask: CurrentId " + Task.CurrentId + " завершен.");
-        }
+   class Program
+   {
+      static void MyTask1()
+      {
+         Console.WriteLine("MyTask: CurrentId " + Task.CurrentId + " запущен.");
+         Thread.Sleep(1000);
+         Console.WriteLine("MyTask: CurrentId " + Task.CurrentId + " завершен.");
+      }
+      static void MyTask2()
+      {
+         Console.WriteLine("MyTask: CurrentId " + Task.CurrentId + " запущен.");
+         Thread.Sleep(1000);
+         Console.WriteLine("MyTask: CurrentId " + Task.CurrentId + " завершен.");
+      }
 
-        static void Main()
-        {
-            Console.WriteLine("Основной поток запущен.");
+      static void Main()
+      {
+         Console.WriteLine("Основной поток запущен.");
 
-            Task task1 = new Task(MyTask1);
-            Task task2 = new Task(MyTask2);
+         Task task1 = new Task(MyTask1);
+         Task task2 = new Task(MyTask2);
 
-            task1.Start();
-            task2.Start();
+         task1.Start();
+         task2.Start();
 
-            Console.WriteLine("Id задачи task1: " + task1.Id);
-            Console.WriteLine("Id задачи task2: " + task2.Id);
+         Console.WriteLine("Id задачи task1: " + task1.Id);
+         Console.WriteLine("Id задачи task2: " + task2.Id);
 
-            Task.WaitAll(task1, task2);
-            //Task.WaitAny(task1, task2);
+         Task.WaitAll(task1, task2);
+         //Task.WaitAny(task1, task2);
 
-            Console.WriteLine("Основной поток завершен.");
+         Console.WriteLine("Основной поток завершен.");
 
-            // Задержка
-            Console.ReadKey();
-        }
-    }
+         // Задержка
+         Console.ReadKey();
+      }
+   }
 }

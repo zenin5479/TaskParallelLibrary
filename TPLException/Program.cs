@@ -5,41 +5,41 @@ using System.Threading.Tasks;
 
 namespace TPLException
 {
-    internal class Program
-    {
-        // Метод в котором будет возбуждаться исключение.
-        static void MyTask()
-        {
-            Console.WriteLine("Задача запущена.");
-            throw new Exception();
-            Console.WriteLine("Задача завершена.");
-        }
+   internal class Program
+   {
+      // Метод в котором будет возбуждаться исключение.
+      static void MyTask()
+      {
+         Console.WriteLine("Задача запущена.");
+         throw new Exception();
+         Console.WriteLine("Задача завершена.");
+      }
 
-        static void Main()
-        {
-            Console.WriteLine("Основной поток запущен.");
-            Task task = new Task(MyTask);
+      static void Main()
+      {
+         Console.WriteLine("Основной поток запущен.");
+         Task task = new Task(MyTask);
 
-            try
-            {
-                task.Start();
-                task.Wait(); // Для обработки исключения обязательно вызвать Wait!
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception       : " + ex.GetType());
-                Console.WriteLine("Message         : " + ex.Message);
-                if (ex.InnerException != null)
-                    Console.WriteLine("Inner Exception : " + ex.InnerException.GetType());
-            }
-            finally
-            {
-                Console.WriteLine("Статус задачи   : " + task.Status);
-            }
-            Console.WriteLine("Основной поток завершен.");
+         try
+         {
+            task.Start();
+            task.Wait(); // Для обработки исключения обязательно вызвать Wait!
+         }
+         catch (Exception ex)
+         {
+            Console.WriteLine("Exception       : " + ex.GetType());
+            Console.WriteLine("Message         : " + ex.Message);
+            if (ex.InnerException != null)
+               Console.WriteLine("Inner Exception : " + ex.InnerException.GetType());
+         }
+         finally
+         {
+            Console.WriteLine("Статус задачи   : " + task.Status);
+         }
+         Console.WriteLine("Основной поток завершен.");
 
-            // Задержка
-            Console.ReadKey();
-        }
-    }
+         // Задержка
+         Console.ReadKey();
+      }
+   }
 }
